@@ -18,17 +18,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/send', function () {
-    $date = new DateTime();
-    $new_customers = DB::table("customers")
-        ->whereDate("created_at", "=",$date)
-        ->count();
-    dd($new_customers);
-//    $details = [
-//        "title" => "New Customers ",
-//        "body" => "this is test ",
-//    ];
-//    \Illuminate\Support\Facades\Mail::to("othmandori@gmail.com")->send(new App\Mail\DailyCustomersMail($details));
-//    echo "done";
-});
-
